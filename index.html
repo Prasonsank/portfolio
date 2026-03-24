@@ -35,6 +35,19 @@
             transform: translateY(-10px);
         }
 
+        .input-glass {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .input-glass:focus {
+            border-color: #3b82f6;
+            background: rgba(255, 255, 255, 0.07);
+            outline: none;
+        }
+
         .hero-glow {
             background: radial-gradient(circle at 50% -20%, #1e3a8a 0%, transparent 60%);
         }
@@ -57,79 +70,85 @@
             width: 400px;
         }
 
+        #slider-viewport {
+            overflow-x: auto;
+            display: flex;
+            -webkit-overflow-scrolling: touch;
+            cursor: grab;
+        }
+
+        #slider-viewport:active { cursor: grabbing; }
+
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
         @media (max-width: 768px) {
             .project-card { width: 300px; }
+            .hero-text { font-size: 3.5rem; line-height: 1; }
         }
     </style>
 </head>
 <body class="antialiased">
 
-    <nav class="fixed w-full top-0 z-50 glass-nav px-8 h-20 flex justify-between items-center">
-        <div class="text-white font-black tracking-tighter text-2xl uppercase">
+    <nav class="fixed w-full top-0 z-50 glass-nav px-6 md:px-8 h-20 flex justify-between items-center">
+        <div class="text-white font-black tracking-tighter text-xl md:text-2xl uppercase">
             PRASON<span class="text-blue-600">.</span>PAUL
         </div>
-        <div class="hidden md:flex space-x-12 text-[10px] uppercase tracking-[0.4em] font-bold">
-            <a href="#expertise" class="text-slate-400 hover:text-white transition">Expertise</a>
-            <a href="#services" class="text-slate-400 hover:text-white transition">Services</a>
-            <a href="#work" class="text-slate-400 hover:text-white transition">Portfolio</a>
+        <div class="flex space-x-6 md:space-x-12 text-[9px] md:text-[10px] uppercase tracking-[0.3em] font-bold">
+            <a href="#work" class="text-slate-400 hover:text-white transition hidden sm:block">Portfolio</a>
             <a href="#contact" class="text-white border-b border-blue-600 pb-1">Hire Me</a>
         </div>
     </nav>
 
-    <header class="min-h-screen flex items-center px-8 hero-glow pt-20">
-        <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-16 items-center">
+    <header class="min-h-screen flex items-center px-6 md:px-8 hero-glow pt-24">
+        <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div class="text-center lg:text-left">
                 <span class="text-blue-500 font-bold tracking-[0.5em] uppercase text-[10px] mb-6 block">Frontend & UI/UX Specialist</span>
-                <h1 class="text-6xl md:text-8xl font-black text-white leading-[0.95] mb-8 tracking-tighter">
+                <h1 class="hero-text text-6xl md:text-8xl font-black text-white leading-[0.95] mb-8 tracking-tighter">
                     Pixel Perfect.<br><span class="gradient-text">Visual Design.</span>
                 </h1>
-                <p class="text-lg text-slate-400 max-w-lg mx-auto lg:mx-0 mb-10 leading-relaxed font-light">
-                    I specialize in building high-performance, responsive frontends that turn visitors into customers. Focus on aesthetics, motion, and flawless user experiences.
+                <p class="text-base md:text-lg text-slate-400 max-w-lg mx-auto lg:mx-0 mb-10 leading-relaxed font-light">
+                    Building high-performance, responsive frontends that turn visitors into customers. Focus on aesthetics, motion, and flawless user experiences.
                 </p>
-                <div class="flex flex-wrap justify-center lg:justify-start gap-6">
-                    <a href="#work" class="bg-white text-black px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-blue-600 hover:text-white transition-all shadow-xl shadow-blue-900/10">View Projects</a>
-                    <a href="mailto:prasonsank@gmail.com" class="bg-white/5 border border-white/10 text-white px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition">Get Started</a>
+                <div class="flex flex-wrap justify-center lg:justify-start gap-4">
+                    <a href="#work" class="bg-white text-black px-8 py-4 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-blue-600 hover:text-white transition-all">View Projects</a>
+                    <a href="#contact" class="bg-white/5 border border-white/10 text-white px-8 py-4 rounded-full font-bold text-xs uppercase tracking-widest hover:bg-white/10 transition">Start Project</a>
                 </div>
             </div>
+            
             <div class="hidden lg:block relative">
-                <div class="glass-card aspect-square rounded-[3rem] flex flex-col items-center justify-center p-20 text-center">
+                <div class="glass-card aspect-square rounded-[3rem] flex flex-col items-center justify-center p-16 text-center">
                     <div class="absolute inset-0 bg-blue-600/5 blur-[80px]"></div>
-                    <i class="fas fa-terminal text-7xl text-blue-600 mb-6 opacity-30"></i>
+                    <i class="fas fa-terminal text-6xl text-blue-600 mb-6 opacity-30"></i>
                     <h3 class="text-white font-bold text-2xl mb-2">Frontend Stack</h3>
-                    <p class="text-xs text-slate-500 uppercase tracking-widest leading-loose">
-                        React • Tailwind CSS • HTML5<br>JavaScript • Three.js • Vercel
+                    <p class="text-[10px] text-slate-500 uppercase tracking-widest leading-loose">
+                        React • Tailwind CSS • Three.js<br>JavaScript • Vercel • Animation
                     </p>
                 </div>
             </div>
         </div>
     </header>
 
-    <section id="expertise" class="py-32 px-8 bg-[#070707]">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid md:grid-cols-3 gap-12">
-                <div class="glass-card p-10 rounded-[2.5rem]">
-                    <i class="fas fa-code text-blue-600 text-2xl mb-8"></i>
-                    <h3 class="text-white font-bold text-xl mb-4">Web Development</h3>
-                    <p class="text-sm leading-relaxed">Advanced, clean-code architecture built with modern frameworks for maximum speed and SEO dominance.</p>
-                </div>
-                <div class="glass-card p-10 rounded-[2.5rem]">
-                    <i class="fas fa-cubes text-indigo-500 text-2xl mb-8"></i>
-                    <h3 class="text-white font-bold text-xl mb-4">3D Experiences</h3>
-                    <p class="text-sm leading-relaxed">Pushing web boundaries with immersive 3D environments and interactive spatial computing.</p>
-                </div>
-                <div class="glass-card p-10 rounded-[2.5rem]">
-                    <i class="fas fa-brain text-purple-500 text-2xl mb-8"></i>
-                    <h3 class="text-white font-bold text-xl mb-4">AI Asset Design</h3>
-                    <p class="text-sm leading-relaxed">Integrating high-fidelity AI-generated imagery to create unique, high-end brand identities.</p>
-                </div>
+    <section id="expertise" class="py-24 px-6 md:px-8 bg-[#070707]">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+            <div class="glass-card p-10 rounded-[2.5rem]">
+                <i class="fas fa-code text-blue-600 text-xl mb-6"></i>
+                <h3 class="text-white font-bold text-lg mb-3">Web Architecture</h3>
+                <p class="text-sm text-slate-500 leading-relaxed">Clean-code architecture built with modern frameworks for speed and SEO dominance.</p>
+            </div>
+            <div class="glass-card p-10 rounded-[2.5rem]">
+                <i class="fas fa-cubes text-indigo-500 text-xl mb-6"></i>
+                <h3 class="text-white font-bold text-lg mb-3">3D Experience</h3>
+                <p class="text-sm text-slate-500 leading-relaxed">Pushing web boundaries with immersive 3D environments and product displays.</p>
+            </div>
+            <div class="glass-card p-10 rounded-[2.5rem]">
+                <i class="fas fa-brain text-purple-500 text-xl mb-6"></i>
+                <h3 class="text-white font-bold text-lg mb-3">AI Asset Design</h3>
+                <p class="text-sm text-slate-500 leading-relaxed">Integrating high-fidelity AI imagery to create unique, high-end brand identities.</p>
             </div>
         </div>
     </section>
-
-    <section id="services" class="py-32 px-8 bg-[#050505]">
+ <section id="services" class="py-32 px-8 bg-[#050505]">
         <div class="max-w-7xl mx-auto">
             <div class="mb-20">
                 <h2 class="text-blue-500 font-bold tracking-[0.5em] uppercase text-[10px] mb-4">Strategic Frontend Solutions</h2>
@@ -171,101 +190,144 @@
             </div>
         </div>
     </section>
-
-    <section id="work" class="py-32 bg-[#050505] overflow-hidden">
-        <div class="max-w-7xl mx-auto px-8 mb-16">
-            <h2 class="text-4xl font-black text-white tracking-tighter mb-2">Live Deployments</h2>
-            <p class="text-slate-500 text-[10px] uppercase tracking-[0.5em]">Auto-Scrolling Frontend Showcase</p>
+    <section id="work" class="py-24 bg-[#050505] overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 md:px-8 mb-12">
+            <h2 class="text-3xl font-black text-white tracking-tighter mb-2 uppercase">Live Deployments</h2>
+            <p class="text-slate-500 text-[9px] uppercase tracking-[0.4em]">Swipe to browse / Auto-scroll active</p>
         </div>
 
-        <div id="slider-viewport" class="overflow-x-hidden hide-scrollbar">
-            <div id="slider-content" class="slider-wrapper">
+        <div id="slider-viewport" class="hide-scrollbar">
+            <div id="slider-content" class="slider-wrapper px-6">
                 <a href="https://3d-gray-ten.vercel.app/" target="_blank" class="glass-card project-card p-4 rounded-[2.5rem] group block">
-                    <div class="aspect-video bg-blue-900/10 rounded-[2rem] flex items-center justify-center relative mb-8 overflow-hidden">
-                        <i class="fas fa-cubes text-7xl text-blue-500/20 group-hover:scale-110 transition-transform duration-500"></i>
-                        <div class="absolute top-6 right-6 px-4 py-1 bg-blue-600 text-[9px] text-white font-black uppercase tracking-widest rounded-full">3D Frontend</div>
+                    <div class="aspect-video bg-blue-900/10 rounded-[1.5rem] flex items-center justify-center relative mb-6 overflow-hidden">
+                        <i class="fas fa-cubes text-6xl text-blue-500/20 group-hover:scale-110 transition-transform duration-500"></i>
+                        <div class="absolute top-4 right-4 px-3 py-1 bg-blue-600 text-[8px] text-white font-black uppercase tracking-widest rounded-full">3D Hub</div>
                     </div>
-                    <div class="px-6 pb-6 text-center">
-                        <h4 class="text-2xl font-bold text-white mb-2 tracking-tight">Immersive Hub</h4>
-                        <span class="text-blue-500 font-bold text-xs uppercase tracking-widest">Launch Site <i class="fas fa-arrow-right ml-2"></i></span>
+                    <div class="px-4 pb-4">
+                        <h4 class="text-xl font-bold text-white mb-1">Immersive Interface</h4>
+                        <span class="text-blue-500 font-bold text-[10px] uppercase tracking-widest">Launch Site <i class="fas fa-arrow-right ml-1"></i></span>
                     </div>
                 </a>
 
                 <a href="https://megha-clinic.vercel.app/" target="_blank" class="glass-card project-card p-4 rounded-[2.5rem] group block">
-                    <div class="aspect-video bg-slate-900 rounded-[2rem] flex items-center justify-center relative mb-8 overflow-hidden">
-                        <i class="fas fa-heartbeat text-7xl text-slate-700/30 group-hover:text-blue-500 transition-colors"></i>
-                        <div class="absolute top-6 right-6 px-4 py-1 bg-white/10 text-[9px] text-white font-black uppercase tracking-widest rounded-full">Medical UI</div>
+                    <div class="aspect-video bg-slate-900 rounded-[1.5rem] flex items-center justify-center relative mb-6 overflow-hidden">
+                        <i class="fas fa-heartbeat text-6xl text-slate-700/30"></i>
+                        <div class="absolute top-4 right-4 px-3 py-1 bg-white/10 text-[8px] text-white font-black uppercase tracking-widest rounded-full">Medical</div>
                     </div>
-                    <div class="px-6 pb-6 text-center">
-                        <h4 class="text-2xl font-bold text-white mb-2 tracking-tight">Megha Clinic</h4>
-                        <span class="text-blue-500 font-bold text-xs uppercase tracking-widest">View Portal <i class="fas fa-arrow-right ml-2"></i></span>
-                    </div>
-                </a>
-
-                <a href="https://srinivasa-vert.vercel.app/" target="_blank" class="glass-card project-card p-4 rounded-[2.5rem] group block">
-                    <div class="aspect-video bg-emerald-900/10 rounded-[2rem] flex items-center justify-center relative mb-8 overflow-hidden">
-                        <i class="fas fa-building text-7xl text-emerald-500/20 group-hover:text-emerald-500 transition-colors"></i>
-                        <div class="absolute top-6 right-6 px-4 py-1 bg-white/10 text-[9px] text-white font-black uppercase tracking-widest rounded-full">Corporate UI</div>
-                    </div>
-                    <div class="px-6 pb-6 text-center">
-                        <h4 class="text-2xl font-bold text-white mb-2 tracking-tight">Srinivasa Vert</h4>
-                        <span class="text-emerald-500 font-bold text-xs uppercase tracking-widest">Visit site <i class="fas fa-arrow-right ml-2"></i></span>
+                    <div class="px-4 pb-4">
+                        <h4 class="text-xl font-bold text-white mb-1">Megha Clinic</h4>
+                        <span class="text-blue-500 font-bold text-[10px] uppercase tracking-widest">View Portal <i class="fas fa-arrow-right ml-1"></i></span>
                     </div>
                 </a>
 
                 <a href="https://renu-lilac.vercel.app/" target="_blank" class="glass-card project-card p-4 rounded-[2.5rem] group block">
-                    <div class="aspect-video bg-purple-900/10 rounded-[2rem] flex items-center justify-center relative mb-8 overflow-hidden">
-                        <i class="fas fa-tooth text-7xl text-purple-500/20 group-hover:text-purple-500 transition-colors"></i>
-                        <div class="absolute top-6 right-6 px-4 py-1 bg-white/10 text-[9px] text-white font-black uppercase tracking-widest rounded-full">Dental Interface</div>
+                    <div class="aspect-video bg-purple-900/10 rounded-[1.5rem] flex items-center justify-center relative mb-6 overflow-hidden">
+                        <i class="fas fa-tooth text-6xl text-purple-500/20"></i>
                     </div>
-                    <div class="px-6 pb-6 text-center">
-                        <h4 class="text-2xl font-bold text-white mb-2 tracking-tight">Renu Dental</h4>
-                        <span class="text-purple-500 font-bold text-xs uppercase tracking-widest">Launch <i class="fas fa-arrow-right ml-2"></i></span>
+                    <div class="px-4 pb-4">
+                        <h4 class="text-xl font-bold text-white mb-1">Renu Dental</h4>
+                        <span class="text-purple-500 font-bold text-[10px] uppercase tracking-widest">Visit Site <i class="fas fa-arrow-right ml-1"></i></span>
                     </div>
                 </a>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="py-32 px-8">
-        <div class="max-w-5xl mx-auto glass-card rounded-[4rem] p-16 md:p-24 text-center relative overflow-hidden">
-            <div class="relative z-10">
-                <h2 class="text-5xl md:text-7xl font-black text-white mb-8 tracking-tighter">Ready to scale?</h2>
-                <div class="space-y-6">
-                    <a href="mailto:prasonsank@gmail.com" class="text-2xl md:text-4xl font-bold text-white hover:text-blue-500 transition block underline decoration-blue-600 underline-offset-8">prasonsank@gmail.com</a>
-                    <p class="text-xl text-slate-500 font-bold uppercase tracking-[0.5em]">9849257600</p>
                 </div>
-            </div>
-            <div class="absolute -top-24 -right-24 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px]"></div>
         </div>
     </section>
 
-    <footer class="py-12 border-t border-white/5 text-center">
-        <p class="text-[10px] font-bold text-slate-600 uppercase tracking-[0.8em]">PRASON PAUL — FRONTEND SPECIALIST</p>
+    <section id="contact" class="py-24 px-6 md:px-8 bg-[#080808]">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-6xl font-black text-white tracking-tighter mb-4">Scale your business.</h2>
+                <p class="text-slate-500 uppercase tracking-widest text-[10px]">Direct business inquiry form</p>
+            </div>
+
+            <form action="https://formspree.io/f/prasonsank@gmail.com" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="flex flex-col">
+                    <label class="text-[10px] uppercase font-bold text-slate-500 mb-2 ml-4">Business Name</label>
+                    <input type="text" name="business_name" required placeholder="Clinic / Brand Name" class="input-glass p-4 rounded-2xl text-sm">
+                </div>
+                <div class="flex flex-col">
+                    <label class="text-[10px] uppercase font-bold text-slate-500 mb-2 ml-4">Phone Number</label>
+                    <input type="tel" name="phone" required placeholder="+91 00000 00000" class="input-glass p-4 rounded-2xl text-sm">
+                </div>
+                <div class="flex flex-col md:col-span-2">
+                    <label class="text-[10px] uppercase font-bold text-slate-500 mb-2 ml-4">Project Details</label>
+                    <textarea name="message" rows="4" required placeholder="What are you looking to build?" class="input-glass p-4 rounded-3xl text-sm resize-none"></textarea>
+                </div>
+                <div class="md:col-span-2 flex justify-center mt-4">
+                    <button type="submit" class="bg-blue-600 text-white px-12 py-4 rounded-full font-bold text-xs uppercase tracking-[0.2em] hover:bg-blue-700 transition-all w-full md:w-auto shadow-xl shadow-blue-600/20">
+                        Send Brief <i class="fas fa-paper-plane ml-2"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-24 px-6 border-t border-white/5 bg-[#050505]">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-5xl font-black text-white mb-8 tracking-tighter">Ready to start?</h2>
+            
+            <div class="flex flex-col items-center space-y-6 mb-12">
+                <a href="mailto:prasonsank@gmail.com" class="text-xl md:text-2xl text-white hover:text-blue-500 transition-all font-medium">
+                    prasonsank@gmail.com
+                </a>
+                <p class="text-slate-500 font-bold tracking-[0.3em] text-sm">9849257600</p>
+                
+                <a href="https://www.linkedin.com/in/prason-paul-5560732b8/" target="_blank" class="flex items-center gap-3 bg-white/5 border border-white/10 px-6 py-3 rounded-full hover:bg-[#0077b5] hover:border-[#0077b5] transition-all group">
+                    <i class="fab fa-linkedin text-[#0077b5] text-xl group-hover:text-white"></i>
+                    <span class="text-white text-xs font-bold uppercase tracking-widest">Connect on LinkedIn</span>
+                </a>
+            </div>
+
+            <p class="text-[9px] font-bold text-slate-700 uppercase tracking-[0.8em]">PRASON PAUL — FRONTEND SPECIALIST © 2026</p>
+        </div>
     </footer>
 
     <script>
         const viewport = document.getElementById('slider-viewport');
         const content = document.getElementById('slider-content');
-        let isPaused = false;
+        let isUserInteracting = false;
         let scrollPos = 0;
+        let resumeTimeout;
 
+        // Clone cards for infinite effect
         const clones = content.innerHTML;
         content.innerHTML += clones;
 
         function animate() {
-            if (!isPaused) {
-                scrollPos += 0.8;
+            if (!isUserInteracting) {
+                scrollPos += 0.8; 
+                
                 if (scrollPos >= content.scrollWidth / 2) {
                     scrollPos = 0;
                 }
                 viewport.scrollLeft = scrollPos;
+            } else {
+                scrollPos = viewport.scrollLeft;
             }
             requestAnimationFrame(animate);
         }
 
-        viewport.addEventListener('mouseenter', () => isPaused = true);
-        viewport.addEventListener('mouseleave', () => isPaused = false);
+        const startInteraction = () => {
+            isUserInteracting = true;
+            clearTimeout(resumeTimeout);
+        };
+
+        const stopInteraction = () => {
+            resumeTimeout = setTimeout(() => {
+                isUserInteracting = false;
+                scrollPos = viewport.scrollLeft;
+            }, 2000);
+        };
+
+        viewport.addEventListener('mouseenter', startInteraction);
+        viewport.addEventListener('mouseleave', stopInteraction);
+        viewport.addEventListener('touchstart', startInteraction, { passive: true });
+        viewport.addEventListener('touchend', stopInteraction);
+        viewport.addEventListener('wheel', () => {
+            startInteraction();
+            stopInteraction();
+        }, { passive: true });
+
         animate();
     </script>
 </body>
