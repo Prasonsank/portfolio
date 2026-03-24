@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prason Paul | Frontend Architect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
+        
+        body { 
+            background-color: #050505; 
+            font-family: 'Inter', sans-serif;
+            color: #a1a1aa;
+            overflow-x: hidden;
+        }
+
+        .glass-nav {
+            background: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: #3b82f6;
+            transform: translateY(-10px);
+        }
+
+        .hero-glow {
+            background: radial-gradient(circle at 50% -20%, #1e3a8a 0%, transparent 60%);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #fff 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .slider-wrapper {
+            display: flex;
+            gap: 2rem;
+            width: max-content;
+            padding: 2rem 0;
+        }
+
+        .project-card {
+            flex-shrink: 0;
+            width: 400px;
+        }
+
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        @media (max-width: 768px) {
+            .project-card { width: 300px; }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="fixed w-full top-0 z-50 glass-nav px-8 h-20 flex justify-between items-center">
+        <div class="text-white font-black tracking-tighter text-2xl uppercase">
+            PRASON<span class="text-blue-600">.</span>PAUL
+        </div>
+        <div class="hidden md:flex space-x-12 text-[10px] uppercase tracking-[0.4em] font-bold">
+            <a href="#expertise" class="text-slate-400 hover:text-white transition">Expertise</a>
+            <a href="#services" class="text-slate-400 hover:text-white transition">Services</a>
+            <a href="#work" class="text-slate-400 hover:text-white transition">Portfolio</a>
+            <a href="#contact" class="text-white border-b border-blue-600 pb-1">Hire Me</a>
+        </div>
+    </nav>
+
+    <header class="min-h-screen flex items-center px-8 hero-glow pt-20">
+        <div class="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-16 items-center">
+            <div class="text-center lg:text-left">
+                <span class="text-blue-500 font-bold tracking-[0.5em] uppercase text-[10px] mb-6 block">Frontend & UI/UX Specialist</span>
+                <h1 class="text-6xl md:text-8xl font-black text-white leading-[0.95] mb-8 tracking-tighter">
+                    Pixel Perfect.<br><span class="gradient-text">Visual Design.</span>
+                </h1>
+                <p class="text-lg text-slate-400 max-w-lg mx-auto lg:mx-0 mb-10 leading-relaxed font-light">
+                    I specialize in building high-performance, responsive frontends that turn visitors into customers. Focus on aesthetics, motion, and flawless user experiences.
+                </p>
+                <div class="flex flex-wrap justify-center lg:justify-start gap-6">
+                    <a href="#work" class="bg-white text-black px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-blue-600 hover:text-white transition-all shadow-xl shadow-blue-900/10">View Projects</a>
+                    <a href="mailto:prasonsank@gmail.com" class="bg-white/5 border border-white/10 text-white px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition">Get Started</a>
+                </div>
+            </div>
+            <div class="hidden lg:block relative">
+                <div class="glass-card aspect-square rounded-[3rem] flex flex-col items-center justify-center p-20 text-center">
+                    <div class="absolute inset-0 bg-blue-600/5 blur-[80px]"></div>
+                    <i class="fas fa-terminal text-7xl text-blue-600 mb-6 opacity-30"></i>
+                    <h3 class="text-white font-bold text-2xl mb-2">Frontend Stack</h3>
+                    <p class="text-xs text-slate-500 uppercase tracking-widest leading-loose">
+                        React • Tailwind CSS • HTML5<br>JavaScript • Three.js • Vercel
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="expertise" class="py-32 px-8 bg-[#070707]">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-3 gap-12">
+                <div class="glass-card p-10 rounded-[2.5rem]">
+                    <i class="fas fa-code text-blue-600 text-2xl mb-8"></i>
+                    <h3 class="text-white font-bold text-xl mb-4">Web Development</h3>
+                    <p class="text-sm leading-relaxed">Advanced, clean-code architecture built with modern frameworks for maximum speed and SEO dominance.</p>
+                </div>
+                <div class="glass-card p-10 rounded-[2.5rem]">
+                    <i class="fas fa-cubes text-indigo-500 text-2xl mb-8"></i>
+                    <h3 class="text-white font-bold text-xl mb-4">3D Experiences</h3>
+                    <p class="text-sm leading-relaxed">Pushing web boundaries with immersive 3D environments and interactive spatial computing.</p>
+                </div>
+                <div class="glass-card p-10 rounded-[2.5rem]">
+                    <i class="fas fa-brain text-purple-500 text-2xl mb-8"></i>
+                    <h3 class="text-white font-bold text-xl mb-4">AI Asset Design</h3>
+                    <p class="text-sm leading-relaxed">Integrating high-fidelity AI-generated imagery to create unique, high-end brand identities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-32 px-8 bg-[#050505]">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-20">
+                <h2 class="text-blue-500 font-bold tracking-[0.5em] uppercase text-[10px] mb-4">Strategic Frontend Solutions</h2>
+                <h3 class="text-5xl font-black text-white tracking-tighter">My Services</h3>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="glass-card p-10 rounded-[2.5rem] group border-blue-500/10">
+                    <div class="w-12 h-12 bg-blue-600/10 rounded-2xl flex items-center justify-center mb-8 border border-blue-600/20 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h4 class="text-white font-bold text-xl mb-4">UI/UX Development</h4>
+                    <p class="text-sm leading-relaxed text-slate-500">Converting complex designs into responsive, high-fidelity interfaces using React and Tailwind.</p>
+                </div>
+
+                <div class="glass-card p-10 rounded-[2.5rem] group border-emerald-500/10">
+                    <div class="w-12 h-12 bg-emerald-600/10 rounded-2xl flex items-center justify-center mb-8 border border-emerald-600/20 group-hover:bg-emerald-600 group-hover:text-white transition-all">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <h4 class="text-white font-bold text-xl mb-4">Web Animations</h4>
+                    <p class="text-sm leading-relaxed text-slate-500">Bringing sites to life with smooth transitions, parallax effects, and 3D interactions.</p>
+                </div>
+
+                <div class="glass-card p-10 rounded-[2.5rem] group border-purple-500/10">
+                    <div class="w-12 h-12 bg-purple-600/10 rounded-2xl flex items-center justify-center mb-8 border border-purple-600/20 group-hover:bg-purple-600 group-hover:text-white transition-all">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h4 class="text-white font-bold text-xl mb-4">Landing Pages</h4>
+                    <p class="text-sm leading-relaxed text-slate-500">Fast, SEO-optimized landing pages designed specifically for clinics, startups, and restaurants.</p>
+                </div>
+
+                <div class="glass-card p-10 rounded-[2.5rem] group border-orange-500/10">
+                    <div class="w-12 h-12 bg-orange-600/10 rounded-2xl flex items-center justify-center mb-8 border border-orange-600/20 group-hover:bg-orange-600 group-hover:text-white transition-all">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h4 class="text-white font-bold text-xl mb-4">Brand Visuals</h4>
+                    <p class="text-sm leading-relaxed text-slate-500">Creating custom SVG icons, AI-generated imagery, and cohesive visual identities for the web.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="work" class="py-32 bg-[#050505] overflow-hidden">
+        <div class="max-w-7xl mx-auto px-8 mb-16">
+            <h2 class="text-4xl font-black text-white tracking-tighter mb-2">Live Deployments</h2>
+            <p class="text-slate-500 text-[10px] uppercase tracking-[0.5em]">Auto-Scrolling Frontend Showcase</p>
+        </div>
+
+        <div id="slider-viewport" class="overflow-x-hidden hide-scrollbar">
+            <div id="slider-content" class="slider-wrapper">
+                <a href="https://3d-gray-ten.vercel.app/" target="_blank" class="glass-card project-card p-4 rounded-[2.5rem] group block">
+                    <div class="aspect-video bg-blue-900/10 rounded-[2rem] flex items-center justify-center relative mb-8 overflow-hidden">
+                        <i class="fas fa-cubes text-7xl text-blue-500/20 group-hover:scale-110 transition-transform duration-500"></i>
+                        <div class="absolute top-6 right-6 px-4 py-1 bg-blue-600 text-[9px] text-white font-black uppercase tracking-widest rounded-full">3D Frontend</div>
+                    </div>
+                    <div class="px-6 pb-6 text-center">
+                        <h4 class="text-2xl font-bold text-white mb-2 tracking-tight">Immersive Hub</h4>
+                        <span class="text-blue-500 font-bold text-xs uppercase tracking-widest">Launch Site <i class="fas fa-arrow-right ml-2"></i></span>
+                    </div>
+                </a>
+
+                <a href="https://megha-clinic.vercel.app/" target="_blank" class="glass-card project-card p-4 rounded-[2.5rem] group block">
+                    <div class="aspect-video bg-slate-900 rounded-[2rem] flex items-center justify-center relative mb-8 overflow-hidden">
+                        <i class="fas fa-heartbeat text-7xl text-slate-700/30 group-hover:text-blue-500 transition-colors"></i>
+                        <div class="absolute top-6 right-6 px-4 py-1 bg-white/10 text-[9px] text-white font-black uppercase tracking-widest rounded-full">Medical UI</div>
+                    </div>
+                    <div class="px-6 pb-6 text-center">
+                        <h4 class="text-2xl font-bold text-white mb-2 tracking-tight">Megha Clinic</h4>
+                        <span class="text-blue-500 font-bold text-xs uppercase tracking-widest">View Portal <i class="fas fa-arrow-right ml-2"></i></span>
+                    </div>
+                </a>
+
+                <a href="https://srinivasa-vert.vercel.app/" target="_blank" class="glass-card project-card p-4 rounded-[2.5rem] group block">
+                    <div class="aspect-video bg-emerald-900/10 rounded-[2rem] flex items-center justify-center relative mb-8 overflow-hidden">
+                        <i class="fas fa-building text-7xl text-emerald-500/20 group-hover:text-emerald-500 transition-colors"></i>
+                        <div class="absolute top-6 right-6 px-4 py-1 bg-white/10 text-[9px] text-white font-black uppercase tracking-widest rounded-full">Corporate UI</div>
+                    </div>
+                    <div class="px-6 pb-6 text-center">
+                        <h4 class="text-2xl font-bold text-white mb-2 tracking-tight">Srinivasa Vert</h4>
+                        <span class="text-emerald-500 font-bold text-xs uppercase tracking-widest">Visit site <i class="fas fa-arrow-right ml-2"></i></span>
+                    </div>
+                </a>
+
+                <a href="https://renu-lilac.vercel.app/" target="_blank" class="glass-card project-card p-4 rounded-[2.5rem] group block">
+                    <div class="aspect-video bg-purple-900/10 rounded-[2rem] flex items-center justify-center relative mb-8 overflow-hidden">
+                        <i class="fas fa-tooth text-7xl text-purple-500/20 group-hover:text-purple-500 transition-colors"></i>
+                        <div class="absolute top-6 right-6 px-4 py-1 bg-white/10 text-[9px] text-white font-black uppercase tracking-widest rounded-full">Dental Interface</div>
+                    </div>
+                    <div class="px-6 pb-6 text-center">
+                        <h4 class="text-2xl font-bold text-white mb-2 tracking-tight">Renu Dental</h4>
+                        <span class="text-purple-500 font-bold text-xs uppercase tracking-widest">Launch <i class="fas fa-arrow-right ml-2"></i></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-32 px-8">
+        <div class="max-w-5xl mx-auto glass-card rounded-[4rem] p-16 md:p-24 text-center relative overflow-hidden">
+            <div class="relative z-10">
+                <h2 class="text-5xl md:text-7xl font-black text-white mb-8 tracking-tighter">Ready to scale?</h2>
+                <div class="space-y-6">
+                    <a href="mailto:prasonsank@gmail.com" class="text-2xl md:text-4xl font-bold text-white hover:text-blue-500 transition block underline decoration-blue-600 underline-offset-8">prasonsank@gmail.com</a>
+                    <p class="text-xl text-slate-500 font-bold uppercase tracking-[0.5em]">9849257600</p>
+                </div>
+            </div>
+            <div class="absolute -top-24 -right-24 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px]"></div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-white/5 text-center">
+        <p class="text-[10px] font-bold text-slate-600 uppercase tracking-[0.8em]">PRASON PAUL — FRONTEND SPECIALIST</p>
+    </footer>
+
+    <script>
+        const viewport = document.getElementById('slider-viewport');
+        const content = document.getElementById('slider-content');
+        let isPaused = false;
+        let scrollPos = 0;
+
+        const clones = content.innerHTML;
+        content.innerHTML += clones;
+
+        function animate() {
+            if (!isPaused) {
+                scrollPos += 0.8;
+                if (scrollPos >= content.scrollWidth / 2) {
+                    scrollPos = 0;
+                }
+                viewport.scrollLeft = scrollPos;
+            }
+            requestAnimationFrame(animate);
+        }
+
+        viewport.addEventListener('mouseenter', () => isPaused = true);
+        viewport.addEventListener('mouseleave', () => isPaused = false);
+        animate();
+    </script>
+</body>
+</html>
